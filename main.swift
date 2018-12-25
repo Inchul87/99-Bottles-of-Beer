@@ -1,25 +1,11 @@
-//
-//  main.swift
-//  99 Bottles of Beer
-//
-//  Created by Yoan AVISSE on 27/11/2018.
-//  Copyright © 2018 Yoan Avisse. All rights reserved.
-//
-
-import Foundation
-
-func welcomeMessage() {
-    print("Bienvenue dans mon programme qui va vous permettre d'afficher les paroles de la chanson 99 Bottles of Beer !")
-}
-
-    welcomeMessage()
-
-for numberOfBeerBottle in (0...99).reversed () {
+func showLyrics(max: Int) {
+    
+for numberOfBeerBottle in (0...max).reversed () {
     
     if numberOfBeerBottle == 0 {
         
         print("No more bottles of beer on the wall, no more bottles of beer.")
-        print("Go to the store and buy some more, 99 bottles of beer on the wall.")
+        print("Go to the store and buy some more, \(max) bottles of beer on the wall.")
         
     } else if numberOfBeerBottle == 1 {
         
@@ -39,3 +25,15 @@ for numberOfBeerBottle in (0...99).reversed () {
     }
     
 }
+}
+
+print("Where do you want to start the countdown ?")
+if let choice = readLine() {
+    if let number = Int(choice) {
+    showLyrics(max: number)
+    } else {
+        print("Too much bottles of beer !")
+    }
+}
+
+
